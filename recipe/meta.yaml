@@ -1,0 +1,47 @@
+{% set name = "pangolin" %}
+{% set version = "master" %}
+{% set sha256 = "e89a922c5d2749b39415387a6a2ed03da0edf116a3a3c51db818f652fe6e173f" %}
+{% set pybind_version = "stable" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  - fn: {{ name }}-{{ version }}.tar.gz
+    url: https://github.com/stevenlovegrove/Pangolin/archive/{{ version }}.tar.gz
+    sha256: {{ sha256 }}
+    patches:
+      - macros.patch
+  - url: https://github.com/pybind/pybind11/archive/{{ pybind_version }}.tar.gz
+    fn: pybind-{{ pybind_version }}.tar.gz
+    sha256: 24c820c1bf501890564745cc078464726623b17ba43b4bb38be93045281b7052
+    folder: external/pybind11
+
+build:
+  number: 1
+
+requirements:
+  build:
+    # - {{ compiler('c') }}
+    # - {{ compiler('cxx') }}
+    - cmake
+    - ninja
+    - pkg-config
+  host:
+    - eigen {{ eigen }}
+    - suitesparse {{ suitesparse }}
+    - ffmpeg
+    - freeglut
+    - libtiff
+    - zlib
+    - lz4
+
+about:
+  home: https://github.com/stevenlovegrove/Pangolin
+  summary: Pangolin is a lightweight portable rapid development library for managing OpenGL display / interaction and abstracting video input
+  license: MIT
+
+extra:
+  recipe-maintainers:
+  - v-turin
