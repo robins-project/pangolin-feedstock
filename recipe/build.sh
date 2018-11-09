@@ -17,6 +17,7 @@ cmake -G "Ninja" \
       -DBUILD_PANGOLIN_V4L:BOOL=OFF                   \
       -DCMAKE_LIBRARY_ARCHITECTURE=x86_64-linux-gnu   \
       -DOpenGL_GL_PREFERENCE=GLVND                    \
+      -DPYTHON_EXECUTABLE=${PYTHON}                   \
       ..
 
 ninja install

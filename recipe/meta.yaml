@@ -36,6 +36,7 @@ requirements:
     - libtiff
     - zlib
     - lz4
+    - python
 
 about:
   home: https://github.com/stevenlovegrove/Pangolin
