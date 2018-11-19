@@ -1,6 +1,6 @@
 {% set name = "pangolin" %}
 {% set version = "master" %}
-{% set sha256 = "e89a922c5d2749b39415387a6a2ed03da0edf116a3a3c51db818f652fe6e173f" %}
+{% set sha256 = "86b2a2c9910e24a8c974c22114323ce12de1d470d2a78b769e45c897c231004d" %}
 {% set pybind_version = "stable" %}
 
 package:
