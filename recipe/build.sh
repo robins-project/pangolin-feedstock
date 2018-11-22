@@ -9,8 +9,9 @@ export CFLAGS="$CFLAGS -D__STDC_FORMAT_MACROS=1 -idirafter /usr/include"
 export CXXFLAGS="$CXXFLAGS -D__STDC_FORMAT_MACROS=1 -idirafter /usr/include"
 export LDFLAGS="$LDFLAGS -L/usr/lib/x86_64-linux-gnu -L/usr/lib -fuse-ld=gold"
 
+#cmake -G "Ninja" \
 #      -DOpenGL_GL_PREFERENCE=GLVND                    \
-cmake -G "Ninja" \
+cmake                                                 \
       -DCMAKE_INSTALL_PREFIX=$PREFIX                  \
       -DCMAKE_PREFIX_PATH=$PREFIX                     \
       -DCMAKE_BUILD_TYPE:STRING=Release               \
@@ -20,4 +21,5 @@ cmake -G "Ninja" \
       -DPYTHON_EXECUTABLE=${PYTHON}                   \
       ..
 
-ninja install
+#ninja install
+make install
