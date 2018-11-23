@@ -37,6 +37,7 @@ requirements:
     - zlib
     - lz4
     - python
+    - glew
 
 about:
   home: https://github.com/stevenlovegrove/Pangolin
