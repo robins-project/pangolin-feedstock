@@ -1,6 +1,7 @@
 {% set name = "pangolin" %}
 {% set version = "master" %}
-{% set sha256 = "6cbe4550f4a0826ecd86662ada9006dbeec94b8c3c763937297685ee387c5c28" %}
+{% set commit = "ad8b5f83222291c51b4800d5a5873b0e90a0cf81" %}
+{% set sha256 = "698c57baac13ecfbd39c533aaff9221549b29cae2688bb12eb7f66b3a50bf792" %}
 {% set pybind_version = "stable" %}
 
 package:
@@ -9,7 +10,7 @@ package:
 
 source:
   - fn: {{ name }}-{{ version }}.tar.gz
-    url: https://github.com/stevenlovegrove/Pangolin/archive/{{ version }}.tar.gz
+    url: https://github.com/stevenlovegrove/Pangolin/archive/{{ commit }}.tar.gz
     sha256: {{ sha256 }}
     patches:
       - macros.patch
